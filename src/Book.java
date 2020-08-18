@@ -78,7 +78,7 @@ public class Book {
         }else {
             System.out.println("Title: " + title + " The author is: " + author + " The number of pages is: "+ pages +
                     "and the book reference is: "+ refNumber + " Currently the book is " + loanMessage+ " " +
-                    "and has been borrowed " + Integer.toString(loanCount) + " times" );
+                    "and has been borrowed " + loanCount + " times" );
         }
     }
 
