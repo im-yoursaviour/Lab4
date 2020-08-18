@@ -71,13 +71,14 @@ public class Book {
             loanMessage = "available";
 
         }
-        if(refNumber.equals("")){
+        if(refNumber == ""){
             System.out.println("Title: " + title + " The author is: " + author + " The number of pages is: "+ pages +
                     " and the book reference is zzzz. Currently the book is "+ loanMessage+ " and has been borrowed "
                     +Integer.toString(loanCount) + " times");
         }else {
             System.out.println("Title: " + title + " The author is: " + author + " The number of pages is: "+ pages +
-                    "and the book reference is: "+ refNumber + " Currently the book is " + loanMessage+ " and has been borrowed ");
+                    "and the book reference is: "+ refNumber + " Currently the book is " + loanMessage+ " " +
+                    "and has been borrowed " + Integer.toString(loanCount) + " times" );
         }
     }
 
