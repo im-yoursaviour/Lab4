@@ -3,12 +3,11 @@ public class Book {
     private String author;
     private String title;
     private int pages;
-    private String refNumber="";
+    private String refNumber= "";
     private boolean onLoan;
     private int loanCount;
-    /** Setting constructor
-     *
-     */
+
+    //constructor
     public Book(String author, String title, int pages){
         this.author = author;
         this.title = title;
@@ -17,7 +16,7 @@ public class Book {
         loanCount = 0;
 
     }
-    //methods come here
+
 
     public String getAuthor() {
         return author;
@@ -25,15 +24,7 @@ public class Book {
     public String getTitle(){
         return title;
     }
-    public void printDetails(){
-        if(refNumber==""){
-        System.out.println("Title: " + title + " The author is: " + author + " The number of pages is: "+ pages +
-                "and the book reference is zzzz.");
-    }else {
-            System.out.println("Title: " + title + " The author is: " + author + " The number of pages is: "+ pages +
-                    "and the book reference is: "+ refNumber);
-        }
-    }
+
     public void setRefNumber(String refNumber){
         if(refNumber.length() >= 3) {
             this.refNumber = refNumber;
@@ -68,6 +59,25 @@ public class Book {
             System.out.println("the book is not on loan");
         }else{
             onLoan = false;
+        }
+    }
+
+    public void printDetails(){
+
+        String loanMessage = "";
+        if(onLoan == true){
+            loanMessage = "unavailable";
+        }else{
+            loanMessage = "available";
+
+        }
+        if(refNumber.equals("")){
+            System.out.println("Title: " + title + " The author is: " + author + " The number of pages is: "+ pages +
+                    " and the book reference is zzzz. Currently the book is "+ loanMessage+ " and has been borrowed "
+                    +Integer.toString(loanCount) + " times");
+        }else {
+            System.out.println("Title: " + title + " The author is: " + author + " The number of pages is: "+ pages +
+                    "and the book reference is: "+ refNumber + " Currently the book is " + loanMessage+ " and has been borrowed ");
         }
     }
 
